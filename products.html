@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SPL India – Products</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script>
+    function filterProducts() {
+      const value = document.getElementById("filter").value;
+      const cards = document.querySelectorAll(".product-card");
+      cards.forEach(card => {
+        if (value === "all" || card.dataset.type === value) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <img src="images/box-mockup.jpg" alt="SPL India Logo" class="box-logo" />
+    <h1>SPL India – All Safety Shoes</h1>
+    <p>Explore products by sole, leather type, and more</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="products" class="products">
+    <h2>Our Products</h2>
+    <div class="filter-bar">
+      <label for="filter">Filter by Type:</label>
+      <select id="filter" onchange="filterProducts()">
+        <option value="all">All</option>
+        <option value="pvc">PVC Sole</option>
+        <option value="airmax">Air Max Sole</option>
+        <option value="pu">PU Sole</option>
+      </select>
+    </div>
+    <div class="product-list">
+      <div class="product-card" data-type="pvc">
+        <img src="images/SPL-501.jpg" alt="SPL 501">
+        <h3>SPL 501</h3>
+        <p>Grain Leather, PVC Sole, Antistatic</p>
+        <a class="cta-button" href="https://wa.me/919210383409?text=I'm interested in SPL 501">Order on WhatsApp</a>
+      </div>
+      <div class="product-card" data-type="airmax">
+        <img src="images/SPL-505.jpg" alt="SPL 505">
+        <h3>SPL 505</h3>
+        <p>Caff Leather, Water Repellent, Air Max Sole</p>
+        <a class="cta-button" href="https://wa.me/919210383409?text=I'm interested in SPL 505">Order on WhatsApp</a>
+      </div>
+      <div class="product-card" data-type="pu">
+        <img src="images/SPL-512.jpg" alt="SPL 512">
+        <h3>SPL 512</h3>
+        <p>Grain Leather, PU Sole, Antistatic</p>
+        <a class="cta-button" href="https://wa.me/919210383409?text=I'm interested in SPL 512" target="_blank">
+          Order on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Email: info@spl-india.com | WhatsApp: +91-9210383409</p>
+  </section>
+
+  <footer>
+    <p>© 2025 SPL India. Proudly made with safety and trust.</p>
+  </footer>
+</body>
+</html>
